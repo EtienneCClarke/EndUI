@@ -1,4 +1,4 @@
-import AccordionExample from "./components/accordian/accordion-example";
+import AccordionExample from "./components/accordion/accordion-example";
 import "./app.css";
 
 function App() {
