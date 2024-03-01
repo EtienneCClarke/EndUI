@@ -12,8 +12,10 @@ const Accordion = ({
 }: {
   children: React.JSX.Element[];
 }): JSX.Element => {
+
   const [target, setTarget] = useState<string>("");
   const updateTarget = (newTarget: string) => setTarget(newTarget);
+
   return (
     <AccordionContext.Provider value={{ target, updateTarget }}>
       <div className={css.accordion}>{children}</div>
