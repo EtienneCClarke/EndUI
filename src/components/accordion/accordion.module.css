@@ -1,16 +1,14 @@
 .accordion {
     --child-padding: 1rem;
-    --animation-duration: 300ms;
 
     width: 100%;
     height: fit-content;
     border-radius: 0.3rem;
     overflow: hidden;
-    background-color: white;
 }
 
 .accordion_item:not(:last-child) {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid hsl(var(--primary) / 0.2);
 }
 
 .accordion_trigger {
@@ -25,6 +23,7 @@
     font-size: 1rem;
     outline-offset: 1px;
     background: unset;
+    color: hsl(var(--primary));
 }
 
 .accordion_trigger:hover.accordion_trigger {
@@ -40,6 +39,7 @@
     font-size: 0.9rem;
     font-weight: 300;
     transition: var(--animation-duration);
+    color: hsl(var(--primary));
 }
 
 .accordion_content > div {
@@ -54,6 +54,7 @@
 
 .accordion_chevron {
     transition: var(--animation-duration);
+    fill: hsl(var(--primary));
 }
 
 .accordion_trigger_open .accordion_chevron {

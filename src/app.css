@@ -1,14 +1,32 @@
+:root {
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 100% 100%;
+    --secondary: 0 5% 93%;
+    --secondary-foreground: 0 0% 0%;
+    --warning: 0 84.2% 60.2%;
+    --warning-foreground: 0 100% 100%;
+    --animation-duration: 300ms;
+}
+
 html,
 body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background: linear-gradient(45deg, #564fe5, #5f5adb);
+    /* background: linear-gradient(45deg, #564fe5, #5f5adb); */
+    background: white;
     background-size: cover;
     padding: 2rem;
     font-family: sans-serif;
 }
 
 h1 {
-    color: white;
+    margin-top: 2em;
+    /* color: white; */
+}
+
+.buttons_container,
+.badges_container {
+    display: flex;
+    gap: 2rem;
 }

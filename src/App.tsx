@@ -1,16 +1,17 @@
 import AccordionExample from "./components/accordion/accordion-example";
-import { Button } from "./components/button";
-import { useToast } from "./components/toast";
+import ButtonExample from "./components/button/button-example";
+import BadgeExample from "./components/badge/badge-example";
 import "./app.css";
 
 function App() {
-
   return (
     <>
       <h1>Accordion</h1>
       <AccordionExample />
+      <h1>Badge</h1>
+      <BadgeExample />
       <h1>Button</h1>
-      <Button onClick={() => alert("Hello")}>Button</Button>
+      <ButtonExample />
     </>
   );
 }
