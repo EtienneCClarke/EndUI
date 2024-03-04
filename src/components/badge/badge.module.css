@@ -40,16 +40,13 @@
     0% {
         background: red;
     }
-    20% {
+    25% {
         background: orange;
     }
-    40% {
-        background: yellow;
-    }
-    60% {
+    50% {
         background: green;
     }
-    80% {
+    75% {
         background: blue;
     }
     100% {
