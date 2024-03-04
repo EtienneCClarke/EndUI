@@ -9,6 +9,7 @@ const AccordionContext = createContext({
 
 const Accordion = ({
   children,
+  className,
   ...props
 }: AccordionProps) => {
 
@@ -18,7 +19,7 @@ const Accordion = ({
   return (
     <AccordionContext.Provider value={{ target, updateTarget }}>
       <div
-        className={`${css.accordion} ${props?.className}`}
+        className={`${css.accordion} ${className ? className : ''}`}
         {...props}
       >
         {children}
@@ -30,6 +31,7 @@ const Accordion = ({
 
 const AccordionItem = ({
   children,
+  className,
   value,
   ...props
 }: AccordionItemProps) => {
@@ -39,7 +41,7 @@ const AccordionItem = ({
 
   return (
     <div
-      className={`${css.accordion_item} ${props?.className}`}
+      className={`${css.accordion_item} ${className ? className : ''}`}
       {...props}
     >
       {clonedTrigger}
@@ -51,6 +53,7 @@ const AccordionItem = ({
 
 const AccordionTrigger = ({
   children,
+  className,
   value,
   ...props
 }: AccordionTriggerProps) => {
@@ -59,7 +62,7 @@ const AccordionTrigger = ({
 
   return (
     <button
-      className={`${css.accordion_trigger} ${target === value ? css.accordion_trigger_open : ""} ${props?.className}`}
+      className={`${css.accordion_trigger} ${target === value ? css.accordion_trigger_open : ''} ${className ? className : ''}`}
       onClick={() => updateTarget(target == value ? "" : value!)}
       {...props}
     >
@@ -80,6 +83,7 @@ const AccordionTrigger = ({
 
 const AccordionContent = ({
   children,
+  className,
   value,
   ...props
 }: AccordionContentProps) => {
@@ -88,7 +92,7 @@ const AccordionContent = ({
 
   return (
     <div
-      className={`${css.accordion_content} ${target === value ? css.accordion_open : ""} ${props?.className}`}
+      className={`${css.accordion_content} ${target === value ? css.accordion_open : ""} ${className ? className : ''}`}
       {...props}
     >
       <div>{children}</div>

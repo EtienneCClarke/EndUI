@@ -3,7 +3,7 @@ import css from "./badge.module.css";
 
 export default function ButtonExample() {
   return (
-    <div className="badges_container">
+    <div className="container">
       <Badge>Primary</Badge>
       <Badge variant="secondary">Secondary</Badge>
       <Badge variant="warning">Warning</Badge>
