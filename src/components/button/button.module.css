@@ -9,7 +9,7 @@
     transition: background var(--animation-duration);
     width: fit-content;
     height: fit-content;
-    min-height: 45px;
+    min-height: 46px;
     display: flex;
     align-items: center;
     justify-content: center;

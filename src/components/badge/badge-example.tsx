@@ -1,4 +1,5 @@
 import { Badge } from "./index";
+import css from "./badge.module.css";
 
 export default function ButtonExample() {
   return (
@@ -7,6 +8,7 @@ export default function ButtonExample() {
       <Badge variant="secondary">Secondary</Badge>
       <Badge variant="warning">Warning</Badge>
       <Badge variant="outline">Outline</Badge>
+      <Badge className={css.custom}>Custom</Badge>
     </div>
   );
 }

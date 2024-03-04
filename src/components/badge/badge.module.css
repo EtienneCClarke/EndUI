@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    line-height: 110%;
+    line-height: 100%;
 }
 
 .primary {
@@ -29,4 +29,39 @@
     background: none;
     border: 1px solid hsl(var(--primary) / 0.2);
     color: hsl(var(--primary));
+}
+
+.custom {
+    animation: party 10s infinite forwards;
+    color: white;
+}
+
+@keyframes party {
+    0% {
+        background: red;
+    }
+    20% {
+        background: orange;
+    }
+    25% {
+        color: white;
+    }
+    30% {
+        color: black;
+    }
+    40% {
+        background: yellow;
+    }
+    55% {
+        color: white;
+    }
+    60% {
+        background: green;
+    }
+    80% {
+        background: blue;
+    }
+    100% {
+        background: purple;
+    }
 }

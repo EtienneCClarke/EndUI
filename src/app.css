@@ -13,8 +13,8 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    /* background: linear-gradient(45deg, #564fe5, #5f5adb); */
-    background: white;
+    background: linear-gradient(45deg, #564fe5, #5f5adb);
+    /* background: white; */
     background-size: cover;
     padding: 2rem;
     font-family: sans-serif;
@@ -25,8 +25,8 @@ h1 {
     /* color: white; */
 }
 
-.buttons_container,
-.badges_container {
+.container,
+.container {
     display: flex;
     gap: 2rem;
 }

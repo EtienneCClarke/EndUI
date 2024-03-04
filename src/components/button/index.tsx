@@ -1,6 +1,5 @@
 import * as React from "react";
 import css from "./button.module.css";
-import Loading from "./loading.svg";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?:
@@ -11,8 +10,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     | "ghost"
     | "link"
     | "icon"
-    | "loading"
-    | "primitive";
+    | "loading";
   disabled?: boolean;
 }
 
