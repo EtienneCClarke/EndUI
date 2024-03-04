@@ -1,5 +1,5 @@
 import { cloneElement, createContext, useContext, useState } from "react";
-import Chevron from "./chevron.svg";
+import { AccordionContentProps, AccordionItemProps, AccordionProps, AccordionTriggerProps } from "./accordion.types";
 import css from "./accordion.module.css";
 
 const AccordionContext = createContext({
@@ -9,59 +9,59 @@ const AccordionContext = createContext({
 
 const Accordion = ({
   children,
-}: {
-  children: React.JSX.Element[];
-}): JSX.Element => {
+  ...props
+}: AccordionProps) => {
+
   const [target, setTarget] = useState<string>("");
   const updateTarget = (newTarget: string) => setTarget(newTarget);
 
   return (
     <AccordionContext.Provider value={{ target, updateTarget }}>
-      <div className={css.accordion}>{children}</div>
+      <div
+        className={`${css.accordion} ${props?.className}`}
+        {...props}
+      >
+        {children}
+      </div>
     </AccordionContext.Provider>
   );
+
 };
 
 const AccordionItem = ({
   children,
   value,
-  className,
-  style,
-}: {
-  children: React.JSX.Element[];
-  value: string;
-  className?: string;
-  style?: React.CSSProperties;
-}) => {
+  ...props
+}: AccordionItemProps) => {
+
   const clonedTrigger = cloneElement(children[0], { value });
   const clonedContent = cloneElement(children[1], { value });
 
   return (
-    <div className={`${css.accordion_item} ${className}`} style={style}>
+    <div
+      className={`${css.accordion_item} ${props?.className}`}
+      {...props}
+    >
       {clonedTrigger}
       {clonedContent}
     </div>
   );
+
 };
 
 const AccordionTrigger = ({
   children,
   value,
-  className,
-  style,
-}: {
-  children?: JSX.Element | string;
-  value?: string;
-  className?: string;
-  style?: React.CSSProperties;
-}) => {
+  ...props
+}: AccordionTriggerProps) => {
+
   const { target, updateTarget } = useContext(AccordionContext);
 
   return (
     <button
-      className={`${css.accordion_trigger} ${target === value ? css.accordion_trigger_open : ""} ${className}`}
-      style={style}
-      onClick={() => updateTarget(target == value ? "" : value)}
+      className={`${css.accordion_trigger} ${target === value ? css.accordion_trigger_open : ""} ${props?.className}`}
+      onClick={() => updateTarget(target == value ? "" : value!)}
+      {...props}
     >
       {children}
       <svg
@@ -75,29 +75,26 @@ const AccordionTrigger = ({
       </svg>
     </button>
   );
+
 };
 
 const AccordionContent = ({
   children,
   value,
-  className,
-  style,
-}: {
-  children?: JSX.Element[] | JSX.Element | never[] | never | string;
-  value?: string;
-  className?: string;
-  style?: React.CSSProperties;
-}) => {
+  ...props
+}: AccordionContentProps) => {
+
   const { target } = useContext(AccordionContext);
 
   return (
     <div
-      className={`${css.accordion_content} ${target === value ? css.accordion_open : ""} ${className}`}
-      style={style}
+      className={`${css.accordion_content} ${target === value ? css.accordion_open : ""} ${props?.className}`}
+      {...props}
     >
       <div>{children}</div>
     </div>
   );
+  
 };
 
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };
