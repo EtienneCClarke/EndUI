@@ -13,19 +13,25 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    /* background: linear-gradient(45deg, #564fe5, #5f5adb); */
-    background: white;
+    background: linear-gradient(45deg, #564fe5, #5f5adb);
+    /* background: white; */
     background-size: cover;
     padding: 2rem;
     font-family: sans-serif;
 }
 
 h1 {
-    margin-top: 2em;
-    /* color: white; */
+    margin-block: 0 1.5rem;
 }
 
 .container {
     display: flex;
     gap: 2em;
+}
+
+.component_display {
+    margin-bottom: 2em;
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
 }

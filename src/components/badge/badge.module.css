@@ -37,19 +37,19 @@
 }
 
 @keyframes party {
-    0% {
+    0%, 100% {
         background: red;
     }
-    25% {
+    20% {
         background: orange;
     }
-    50% {
+    40% {
         background: green;
     }
-    75% {
+    60% {
         background: blue;
     }
-    100% {
+    80% {
         background: purple;
     }
 }

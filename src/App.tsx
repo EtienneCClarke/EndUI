@@ -6,12 +6,18 @@ import "./app.css";
 function App() {
   return (
     <>
-      <h1>Accordion</h1>
-      <AccordionExample />
-      <h1>Badge</h1>
-      <BadgeExample />
-      <h1>Button</h1>
-      <ButtonExample />
+      <div className="component_display">
+        <h1>Accordion</h1>
+        <AccordionExample />
+      </div>
+      <div className="component_display">
+        <h1>Badge</h1>
+        <BadgeExample />
+      </div>
+      <div className="component_display">
+        <h1>Button</h1>
+        <ButtonExample />
+      </div>
     </>
   );
 }
