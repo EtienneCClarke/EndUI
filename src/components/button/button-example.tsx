@@ -4,7 +4,7 @@ import Mail from "./mail.svg";
 
 export default function ButtonExample() {
   return (
-    <div className="buttons_container">
+    <div className="container">
       <Button onClick={() => alert("Hello")} variant="primary">
         Primary
       </Button>
