@@ -1,5 +1,5 @@
 interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
-    children?: React.JSX.Element | React.JSX.Element[] | string | number;
+    children?: any;
     className?: string;
 }
 
@@ -10,13 +10,13 @@ interface AccordionItemProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 interface AccordionTriggerProps extends React.HTMLAttributes<HTMLButtonElement> {
-    children: React.JSX.Element[] | React.JSX.Element | string | number | never | never[];
+    children: any;
     className?: string;
     value?: string;
 }
 
 interface AccordionContentProps extends React.HTMLAttributes<HTMLDivElement> {
-    children?: JSX.Element[] | JSX.Element | never[] | never | string;
+    children?: any;
     className?: string;
     value?: string;
 }

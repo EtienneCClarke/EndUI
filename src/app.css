@@ -1,11 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900');
+
 :root {
     --primary: 0 0% 0%;
     --primary-foreground: 0 100% 100%;
     --secondary: 0 5% 85%;
     --secondary-foreground: 0 0% 0%;
-    --warning: 0 84.2% 60.2%;
-    --warning-foreground: 0 100% 100%;
+    --success: 133 61% 33%;
+    --success-foreground: 0 100% 100%;
+    --warning: 45 100% 44%;
+    --warning-foreground: 0 0% 0%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 100% 100%;
     --animation-duration: 300ms;
+    --radius: 0.5rem;
 }
 
 html,
@@ -17,7 +24,8 @@ body {
     /* background: white; */
     background-size: cover;
     padding: 2rem;
-    font-family: sans-serif;
+    font-family: 'Inter';
+    letter-spacing: -0.025em;
 }
 
 h1 {
@@ -34,4 +42,27 @@ h1 {
     background: white;
     padding: 2rem 1.5rem;
     border-radius: 10px;
+}
+
+.custom_badge {
+    animation: party 10s infinite forwards;
+    color: white;
+}
+
+@keyframes party {
+    0%, 100% {
+        background: red;
+    }
+    20% {
+        background: orange;
+    }
+    40% {
+        background: green;
+    }
+    60% {
+        background: blue;
+    }
+    80% {
+        background: purple;
+    }
 }

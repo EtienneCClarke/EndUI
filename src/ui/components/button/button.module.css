@@ -4,7 +4,7 @@
     padding: 0.6rem 1rem;
     box-shadow: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: calc(var(--radius) - 2px);;
     font-weight: 500;
     transition: background var(--animation-duration);
     width: fit-content;
@@ -53,6 +53,16 @@
 
 .warning:hover {
     background: hsl(var(--warning) / 0.85);
+}
+
+.destructive {
+    border: none;
+    background: hsl(var(--destructive));
+    color: hsl(var(--destructive-foreground));
+}
+
+.destructive:hover {
+    background: hsl(var(--destructive) / 0.85);
 }
 
 .outline,

@@ -25,31 +25,13 @@
     color: hsl(var(--warning-foreground));
 }
 
+.destructive {
+    background: hsl(var(--destructive));
+    color: hsl(var(--destructive-foreground));
+}
+
 .outline {
     background: none;
     border: 1px solid hsl(var(--primary) / 0.2);
     color: hsl(var(--primary));
-}
-
-.custom {
-    animation: party 10s infinite forwards;
-    color: white;
-}
-
-@keyframes party {
-    0%, 100% {
-        background: red;
-    }
-    20% {
-        background: orange;
-    }
-    40% {
-        background: green;
-    }
-    60% {
-        background: blue;
-    }
-    80% {
-        background: purple;
-    }
 }

@@ -1,0 +1,41 @@
+.alert > * {
+    padding: 0;
+    margin: 0;
+}
+
+.alert {
+    padding: 0.5rem 0.8rem;
+    width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+    border: 1px solid hsl(var(--alert-colour) / 0.5);
+    border-radius: calc(var(--radius) - 2px);
+    background: hsl(var(--alert-colour) / 0.1);
+}
+
+.alert_title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: hsl(var(--alert-colour));
+}
+
+.alert_content {
+    font-size: 0.9rem;
+    color: hsl(var(--alert-colour));
+}
+
+.primary {
+    --alert-colour: var(--primary);
+}
+
+.success {
+    --alert-colour: var(--success);
+}
+
+.warning {
+    --alert-colour:var(--warning);
+}
+
+.destructive {
+    --alert-colour: var(--destructive);
+}

@@ -1,24 +1,13 @@
-import * as React from "react";
+import { forwardRef } from "react";
 import css from "./button.module.css";
+import { ButtonProps } from "./button.types";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?:
-    | "primary"
-    | "secondary"
-    | "warning"
-    | "outline"
-    | "ghost"
-    | "link"
-    | "icon"
-    | "loading";
-  disabled?: boolean;
-}
-
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     { children, variant = "primary", disabled = false, className, ...props },
     ref,
   ) => {
+
     return (
       <button
         {...props}
@@ -40,7 +29,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {children}
       </button>
     );
-  },
+    
+  }
 );
 
 export { Button };
