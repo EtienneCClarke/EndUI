@@ -14,4 +14,9 @@ interface AlertContentProps extends React.HTMLAttributes<HTMLParagraphElement> {
     className?: string;
 }
 
-export type { AlertProps, AlertTitleProps, AlertContentProps }
+interface AlertIconProps extends React.HTMLAttributes<HTMLDivElement> {
+    children?: any;
+    className?: string;
+}
+
+export type { AlertProps, AlertTitleProps, AlertContentProps, AlertIconProps }
