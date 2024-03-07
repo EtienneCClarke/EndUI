@@ -19,13 +19,17 @@ html,
 body {
     height: 100%;
     margin: 0;
-    padding: 0;
-    background: linear-gradient(45deg, #564fe5, #5f5adb);
-    /* background: white; */
+    /* background: linear-gradient(45deg, #564fe5, #5f5adb); */
+    background: #5e58dc;
     background-size: cover;
     padding: 2rem;
     font-family: 'Inter';
     letter-spacing: -0.025em;
+    transition: var(--animation-duration);
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 h1 {
@@ -35,6 +39,7 @@ h1 {
 .container {
     display: flex;
     gap: 2em;
+    flex-wrap: wrap;
 }
 
 .component_display {
@@ -64,5 +69,12 @@ h1 {
     }
     80% {
         background: purple;
+    }
+}
+
+@media screen and (max-width: 775px) {
+    html,
+    body {
+        padding-inline: 1rem;
     }
 }
