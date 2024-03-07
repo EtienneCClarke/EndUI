@@ -1,4 +1,4 @@
-import { Button } from "../ui/components/button/index";
+import { Button } from "../components/button/index";
 import Icon from "./frame.svg";
 import Mail from "./mail.svg";
 

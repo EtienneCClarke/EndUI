@@ -1,7 +1,7 @@
-import AccordionExample from "./examples/accordion-example";
-import AlertExample from "./examples/alert-example";
-import ButtonExample from "./examples/button-example";
-import BadgeExample from "./examples/badge-example";
+import AccordionExample from "./ui/examples/accordion-example";
+import AlertExample from "./ui/examples/alert-example";
+import ButtonExample from "./ui/examples/button-example";
+import BadgeExample from "./ui/examples/badge-example";
 import "./app.css";
 
 function App() {

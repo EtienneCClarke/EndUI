@@ -1,4 +1,4 @@
-import { Alert, AlertContent, AlertTitle } from "../ui/components/alert"
+import { Alert, AlertContent, AlertTitle } from "../components/alert"
 
 export default function AlertExample() {
     return (

@@ -1,4 +1,4 @@
-import { Badge } from "../ui/components/badge/index";
+import { Badge } from "../components/badge/index";
 
 export default function ButtonExample() {
   return (
