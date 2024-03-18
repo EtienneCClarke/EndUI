@@ -1,7 +1,7 @@
 .button {
     font-size: 0.95rem;
     line-height: 100%;
-    padding: 0.6rem 1rem;
+    padding: 0 1rem;
     box-shadow: none;
     cursor: pointer;
     border-radius: calc(var(--radius) - 2px);;
@@ -43,6 +43,16 @@
 
 .secondary:hover {
     background: hsl(var(--secondary));
+}
+
+.success {
+    border: none;
+    background: hsl(var(--success));
+    color: hsl(var(--success-foreground));
+}
+
+.success:hover {
+    background: hsl(var(--success) / 0.85);
 }
 
 .warning {

@@ -2,6 +2,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     variant?:
         | "primary"
         | "secondary"
+        | "success"
         | "warning"
         | "destructive"
         | "outline"
