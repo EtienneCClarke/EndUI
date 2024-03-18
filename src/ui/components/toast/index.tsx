@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useMemo, useRef, useEffect } from "react";
 import { ToastContextProps, ToastProviderProps, ToastProps, ToastCreateProps } from "./toast.types";
+import { asyncDelay } from "../../utils/async-delay";
 import css from "./toast.module.css";
 import autoAnimate, { getTransitionSizes } from "@formkit/auto-animate";
 
@@ -16,7 +17,7 @@ const ToastProvider = ({ children, position = "bottom_right", className }: Toast
 
     const parent = useRef(null);
     
-    const MAX_TOASTS = 3;
+    const MAX_TOASTS = 5;
 
     function createToast({ title, description, action, duration, variant = "primary" }: ToastCreateProps ) {
         const newToast = {
@@ -143,7 +144,7 @@ const ToastProvider = ({ children, position = "bottom_right", className }: Toast
     )
 }
 
-const Toast = ({ id, title, description, action, duration, variant, close, ...props }: ToastProps) => {
+const Toast = ({ id, title, description, action, duration = 10000, variant, close, ...props }: ToastProps) => {
 
     const composeEvents = () => {
         if(action?.callback !== undefined) {
@@ -151,6 +152,10 @@ const Toast = ({ id, title, description, action, duration, variant, close, ...pr
         }
         close();
     }
+
+    useEffect(() => {
+        asyncDelay(duration).then(() => close());
+    }, [])
 
     return(
         <div className={`${css.toast} ${css[variant]}`} {...props}>
@@ -179,7 +184,6 @@ const Toast = ({ id, title, description, action, duration, variant, close, ...pr
             }
             <button
                 className={css.close_button}
-                aria-name="close"
                 onClick={() => close()}
             >
                 <svg
