@@ -1,7 +1,7 @@
 .button {
     font-size: 0.95rem;
     line-height: 100%;
-    padding: 0 1rem;
+    padding: 0.675rem 1rem;
     box-shadow: none;
     cursor: pointer;
     border-radius: calc(var(--radius) - 2px);;
@@ -9,7 +9,6 @@
     transition: background var(--animation-duration);
     width: fit-content;
     height: fit-content;
-    min-height: 46px;
     display: flex;
     align-items: center;
     justify-content: center;
