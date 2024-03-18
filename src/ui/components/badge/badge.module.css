@@ -20,6 +20,11 @@
     color: hsl(var(--secondary-foreground));
 }
 
+.success {
+    background: hsl(var(--success));
+    color: hsl(var(--success-foreground));
+}
+
 .warning {
     background: hsl(var(--warning));
     color: hsl(var(--warning-foreground));
