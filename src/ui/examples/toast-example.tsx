@@ -87,7 +87,8 @@ export default function ToastExample() {
                         action: {
                             label: "Undo",
                             action: () => { alert("Hi") }
-                        }
+                        },
+                        duration: 1000
                     })}
                 >
                     Quick duration
