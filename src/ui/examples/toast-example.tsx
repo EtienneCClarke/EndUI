@@ -30,7 +30,7 @@ export default function ToastExample() {
                         description: "There was a problem with your request",
                         action: {
                             label: "Undo",
-                            action: () => { alert("Hi") }
+                            fn: () => { alert("Hi") }
                         }
                     })}
                 >
@@ -73,7 +73,7 @@ export default function ToastExample() {
                         description: "There was a problem with your request",
                         action: {
                             label: "Undo",
-                            action: () => { alert("Hi") }
+                            fn: () => { alert("Hi") }
                         },
                         variant: 'destructive'
                     })}
@@ -86,7 +86,7 @@ export default function ToastExample() {
                         description: "There was a problem with your request",
                         action: {
                             label: "Undo",
-                            action: () => { alert("Hi") }
+                            fn: () => { alert("Hi") }
                         },
                         duration: 1000
                     })}

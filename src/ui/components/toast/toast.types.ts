@@ -6,7 +6,7 @@ type ToastVariant = "primary" | "secondary" | "success" | "destructive" | "warni
 
 type ToastAction = {
     label: string;
-    callback: () => {};
+    fn: () => {};
 }
 
 interface ToastContextProps {

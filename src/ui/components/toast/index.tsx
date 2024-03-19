@@ -19,7 +19,8 @@ const ToastProvider = ({ children, position = "bottom_right", className }: Toast
     
     const MAX_TOASTS = 5;
 
-    function createToast({ title, description, action, duration, variant = "primary" }: ToastCreateProps ) {
+    function createToast({ title, description, action, duration = 10000, variant }: ToastCreateProps ) {
+
         const newToast = {
             id: Date.now(),
             title,
@@ -131,10 +132,10 @@ const ToastProvider = ({ children, position = "bottom_right", className }: Toast
                                 id={toast.id}
                                 title={toast?.title}
                                 description={toast?.description}
-                                action={toast.action}
+                                action={toast?.action}
                                 close={() => closeToast(toast.id)}
-                                duration={toast.duration}
-                                variant={toast.variant}
+                                duration={toast?.duration}
+                                variant={toast?.variant}
                             />
                         )})
                     }
@@ -144,11 +145,11 @@ const ToastProvider = ({ children, position = "bottom_right", className }: Toast
     )
 }
 
-const Toast = ({ id, title, description, action, duration = 10000, variant, close, ...props }: ToastProps) => {
+const Toast = ({ id, title, description, action, duration = 10000, variant = "primary", close, ...props }: ToastProps) => {
 
     const composeEvents = () => {
-        if(action?.callback !== undefined) {
-            action?.callback();
+        if(action?.fn !== undefined) {
+            action?.fn();
         }
         close();
     }
