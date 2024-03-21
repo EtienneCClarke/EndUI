@@ -13,6 +13,9 @@
     align-items: center;
     justify-content: center;
     text-align: left;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 .button[disabled] {
@@ -86,7 +89,7 @@
 
 .outline:hover,
 .icon:hover {
-    background: hsl(var(--primary) / 0.05);
+    background: hsl(var(--primary) / 0.075);
 }
 
 .ghost {
