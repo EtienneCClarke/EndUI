@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 :root {
     --primary: 0 0% 0%;
@@ -11,8 +12,13 @@
     --warning-foreground: 0 0% 0%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 100% 100%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
     --animation-duration: 300ms;
-    --radius: 0.5rem;
+    --radius: 0.5rem; 
+    --accent: 240 40% 90%;
+    --accent-foreground: 240 5.9% 10%;
+    --shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 html,
@@ -23,9 +29,12 @@ body {
     background: rgb(26, 26, 26);
     background-size: cover;
     padding: 2rem;
-    font-family: 'Inter';
     letter-spacing: -0.025em;
     transition: var(--animation-duration);
+}
+
+*, *:before, *:after {
+    font-family: "Inter", sans-serif;
 }
 
 ::-webkit-scrollbar {
