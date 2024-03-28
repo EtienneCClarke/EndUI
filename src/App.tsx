@@ -5,6 +5,7 @@ import BadgeExample from "./ui/examples/badge-example";
 import ToastExample from "./ui/examples/toast-example";
 import AlertDialogExample from "./ui/examples/alert-dialog-example";
 import CalendarExample from "./ui/examples/calendar-example";
+import CardExample from "./ui/examples/card-example";
 import "./app.css";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <BadgeExample />
       <ButtonExample />
       <CalendarExample />
+      <CardExample />
       <ToastExample />
     </>
   );
