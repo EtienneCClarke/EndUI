@@ -7,6 +7,7 @@ import AlertDialogExample from "./ui/examples/alert-dialog-example";
 import CalendarExample from "./ui/examples/calendar-example";
 import CardExample from "./ui/examples/card-example";
 import "./app.css";
+import InputExample from "./ui/examples/input-example";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       <ButtonExample />
       <CalendarExample />
       <CardExample />
+      <InputExample />
       <ToastExample />
     </>
   );
