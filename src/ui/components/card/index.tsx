@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { CardProps } from "./card.types";
+import { CardDescriptionProps, CardProps, CardTitleProps } from "./card.types";
 import css from "./card.module.css";
 
 const Card = forwardRef<HTMLDivElement, CardProps>(
@@ -28,7 +28,7 @@ const CardHeader = forwardRef<HTMLDivElement, CardProps>(
     }
 )
 
-const CardTitle = forwardRef<HTMLHeadingElement, CardProps>(
+const CardTitle = forwardRef<HTMLHeadingElement, CardTitleProps>(
     (
         { children, className, ...props },
         ref
@@ -41,7 +41,7 @@ const CardTitle = forwardRef<HTMLHeadingElement, CardProps>(
     }
 )
 
-const CardDescription = forwardRef<HTMLParagraphElement, CardProps>(
+const CardDescription = forwardRef<HTMLParagraphElement, CardDescriptionProps>(
     (
         { children, className, ...props },
         ref
