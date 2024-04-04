@@ -76,7 +76,6 @@ const AlertDialogContent = ({ children, ...props }: AlertDialogContentProps) => 
 
     }, [parent])
 
-    
     return (
         <section
             className={`${css.wrapper} ${state ? css.open : ''}`}

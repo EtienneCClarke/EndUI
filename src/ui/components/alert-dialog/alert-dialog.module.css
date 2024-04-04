@@ -19,13 +19,9 @@
 }
 
 .open .content {
-    animation: scale_in var(--animation-duration) forwards;
+    animation: scale_in var(--animation-duration);
     animation-iteration-count: 1;
     opacity: 1;
-}
-
-.open * {
-    overflow-y: hidden;
 }
 
 .content {
