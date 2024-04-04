@@ -35,16 +35,6 @@
     backdrop-filter: blur(6px);
 }
 
-.toast:nth-child(1) {
-    z-index: 3;
-}
-.toast:nth-child(2) {
-    z-index: 2;
-}
-.toast:nth-child(3) {
-    z-index: 1;
-}
-
 .toast_content > * {
     margin: 0;
 }

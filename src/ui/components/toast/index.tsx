@@ -125,7 +125,13 @@ const ToastProvider = ({ children, position = "bottom_right", className }: Toast
                     ref={parent}
                 >
                     {toasts?.map((toast, index) => {
-                        if(index > MAX_TOASTS - 1) { return; }
+
+                        if(toasts.length > MAX_TOASTS) {
+                            for(let i = 0; i < toasts.length - MAX_TOASTS; i++) {
+                                closeToast(toasts[i].id);
+                            }
+                        }
+
                         return (
                             <Toast
                                 key={toast.id}
@@ -136,6 +142,7 @@ const ToastProvider = ({ children, position = "bottom_right", className }: Toast
                                 close={() => closeToast(toast.id)}
                                 duration={toast?.duration}
                                 variant={toast?.variant}
+                                style={{zIndex: 1 + toasts.length - index}}
                             />
                         )})
                     }
@@ -145,7 +152,7 @@ const ToastProvider = ({ children, position = "bottom_right", className }: Toast
     )
 }
 
-const Toast = ({ id, title, description, action, duration = 10000, variant = "primary", close, ...props }: ToastProps) => {
+const Toast = ({ id, title, description, action, duration = 10000, variant = "primary", close }: ToastProps) => {
 
     const composeEvents = () => {
         if(action?.fn !== undefined) {
@@ -159,7 +166,7 @@ const Toast = ({ id, title, description, action, duration = 10000, variant = "pr
     }, [])
 
     return(
-        <div className={`${css.toast} ${css[variant]}`} {...props}>
+        <div className={`${css.toast} ${css[variant]}`}>
             <div className={css.toast_content}>
                 {title &&
                     <p className={css.title}>

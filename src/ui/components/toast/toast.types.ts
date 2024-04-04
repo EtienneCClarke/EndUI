@@ -42,6 +42,7 @@ interface ToastProps {
     duration?: number;
     variant: ToastVariant;
     close: (id?: number) => void;
+    style?: React.CSSProperties;
 }
 
 export type {
