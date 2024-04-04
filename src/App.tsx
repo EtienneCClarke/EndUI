@@ -8,6 +8,7 @@ import CalendarExample from "./ui/examples/calendar-example";
 import CardExample from "./ui/examples/card-example";
 import "./app.css";
 import InputExample from "./ui/examples/input-example";
+import SelectExample from "./ui/examples/select-example";
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
       <CalendarExample />
       <CardExample />
       <InputExample />
+      <SelectExample />
       <ToastExample />
     </>
   );
