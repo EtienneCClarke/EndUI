@@ -1,5 +1,6 @@
 import { Button } from "../components/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../components/card";
+import { Input } from "../components/input";
 
 export default function CardExample() {
 
@@ -13,7 +14,7 @@ export default function CardExample() {
                 </CardHeader>
                 <CardContent style={{ display: 'flex', flexDirection: 'column', gap:'0.5rem'}}>
                     <label htmlFor="name">Name</label>
-                    <input type="text" placeholder="Name of your project"/>
+                    <Input placeholder="Name of your project" />
                     <label htmlFor="framework">Framework</label>
                     <select>
                         <option selected>Next.js</option>
