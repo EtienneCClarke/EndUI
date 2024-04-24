@@ -4,7 +4,7 @@ import css from "./accordion.module.css";
 
 const AccordionContext = createContext({
   target: "",
-  updateTarget: (value: string) => {},
+  updateTarget: (_value: string) => {},
 });
 
 const Accordion = forwardRef<HTMLDivElement, AccordionProps>(

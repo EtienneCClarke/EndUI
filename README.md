@@ -1,3 +1,3 @@
 # EndUI
 
-EndUI is a personal UI library project heavily inspired by ShadCN.
+EndUI is a personal UI library project inspired by ShadCN.

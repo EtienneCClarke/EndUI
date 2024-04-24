@@ -5,8 +5,8 @@ import css from "./toast.module.css";
 import autoAnimate, { getTransitionSizes } from "@formkit/auto-animate";
 
 const ToastContext = createContext<ToastContextProps>({
-    create: (content: any) => {},
-    close: (id: number) => {}
+    create: (_content: any) => {},
+    close: (_id: number) => {}
 });
 
 const useToast = () => useContext(ToastContext);
@@ -46,8 +46,8 @@ const ToastProvider = ({ children, position = "bottom_right", className }: Toast
     useEffect(() => {
         parent.current && autoAnimate(parent.current, (el, action, oldCoords, newCoords) => {
 
-            let keyframes;
-    
+            let keyframes = {};
+
             if(action === 'add') {
                 
                 if(position === 'top_left' || position === 'top_right') {
@@ -86,27 +86,29 @@ const ToastProvider = ({ children, position = "bottom_right", className }: Toast
 
             }
 
-            if (action === 'remain') {
-                // for items that remain, calculate the delta
-                // from their old position to their new position
-                const deltaX = oldCoords.left - newCoords.left
-                const deltaY = oldCoords.top - newCoords.top
-                // use the getTransitionSizes() helper function to
-                // get the old and new widths of the elements
-                const [widthFrom, widthTo, heightFrom, heightTo] = getTransitionSizes(el, oldCoords, newCoords)
-                // set up our steps with our positioning keyframes
-                const start = { transform: `translate(${deltaX}px, ${deltaY}px)` }
-                const end = { transform: `translate(0, 0)` }
-                // if the dimensions changed, animate them too.
-                if (widthFrom !== widthTo) {
-                  start.width = `${widthFrom}px`
-                  end.width = `${widthTo}px`
+            if(oldCoords && newCoords) {
+                if (action === 'remain') {
+                    // for items that remain, calculate the delta
+                    // from their old position to their new position
+                    const deltaX = oldCoords.left - newCoords.left
+                    const deltaY = oldCoords.top - newCoords.top
+                    // use the getTransitionSizes() helper function to
+                    // get the old and new widths of the elements
+                    const [widthFrom, widthTo, heightFrom, heightTo] = getTransitionSizes(el, oldCoords, newCoords)
+                    // set up our steps with our positioning keyframes
+                    const start: any = { transform: `translate(${deltaX}px, ${deltaY}px)` }
+                    const end: any = { transform: `translate(0, 0)` }
+                    // if the dimensions changed, animate them too.
+                    if (widthFrom !== widthTo) {
+                      start.width = `${widthFrom}px`
+                      end.width = `${widthTo}px`
+                    }
+                    if (heightFrom !== heightTo) {
+                      start.height = `${heightFrom}px`
+                      end.height = `${heightTo}px`
+                    }
+                    keyframes = [start, end]
                 }
-                if (heightFrom !== heightTo) {
-                  start.height = `${heightFrom}px`
-                  end.height = `${heightTo}px`
-                }
-                keyframes = [start, end]
             }
 
             return new KeyframeEffect(el, keyframes, { duration: 300, easing: 'ease-out' });
@@ -152,7 +154,7 @@ const ToastProvider = ({ children, position = "bottom_right", className }: Toast
     )
 }
 
-const Toast = ({ id, title, description, action, duration = 10000, variant = "primary", close }: ToastProps) => {
+const Toast = ({ title, description, action, duration = 10000, variant = "primary", close }: ToastProps) => {
 
     const composeEvents = () => {
         if(action?.fn !== undefined) {
@@ -183,7 +185,6 @@ const Toast = ({ id, title, description, action, duration = 10000, variant = "pr
                 <div className={css.action_container}>
                     <button
                         className={`${css.action_button}`}
-                        {...props}
                         onClick={() => composeEvents()}
                     >
                         {action?.label}

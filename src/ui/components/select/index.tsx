@@ -5,9 +5,9 @@ import { OutsideAlerter } from "../outsideAlerter";
 
 const SelectContext = createContext<SelectedContextProps>({
     open: false,
-    setOpen: (state: boolean) => {},
+    setOpen: (_state: boolean) => {},
     selected: undefined,
-    setSelected: (value: any) => {},
+    setSelected: (_value: any) => {},
     label: undefined
 })
 

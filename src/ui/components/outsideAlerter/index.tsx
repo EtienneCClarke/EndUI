@@ -1,12 +1,12 @@
 import { useRef, useEffect } from "react"
 import { OutsideAlerterProps } from "./outsideAlerter.types";
 
-function useOutsideAlerter(ref, callback) {
+function useOutsideAlerter(ref: any, callback: any) {
     useEffect(() => {
         /**
          * Alert if clicked on outside of element
          */
-        function handleClickOutside(event) {
+        function handleClickOutside(event: Event) {
             if (ref.current && !ref.current.contains(event.target)) {
                 callback();
             }

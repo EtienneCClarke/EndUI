@@ -7,7 +7,7 @@ import { Button } from "../button";
 
 const AlertDialogContext = createContext({
     state: false,
-    showDialog: (state: boolean) => {},
+    showDialog: (_state: boolean) => {},
 })
 
 const AlertDialog = ({ children }: AlertDialogProps) => {
@@ -50,7 +50,7 @@ const AlertDialogContent = ({ children, ...props }: AlertDialogContentProps) => 
     useEffect(() => {
         parent.current && autoAnimate(parent.current, (el, action) => {
 
-            let keyframes;
+            let keyframes = {};
     
             if(action === 'add') {
 

@@ -24,8 +24,9 @@ function App() {
       <InputExample />
       <SelectExample />
       <ToastExample />
+      <br/><br/>
     </>
   );
 }
 
-export default App;
+export { App };
