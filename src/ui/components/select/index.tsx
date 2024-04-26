@@ -118,7 +118,11 @@ const SelectItem = forwardRef<HTMLButtonElement, SelectItemProps>(
         const { selected, setSelected, setOpen } = useContext(SelectContext)
 
         const handleEvents = () => {
-            setSelected(value, `${children}`);
+            if(selected == value) {
+                setSelected(undefined, undefined);
+            } else {
+                setSelected(value, `${children}`);
+            }
             setOpen(false);
         }
 
